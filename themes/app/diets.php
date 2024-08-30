@@ -1,0 +1,59 @@
+<div class="background">
+    <div class="circle">
+<li> <img class="iconTwo" src="<?= url("themes/app/assets/img/diets.png"); ?>"/> </li>
+</div>
+<p class="pTitle">Minhas dietas </p>
+    <button class="detailsb">Adicionar dieta </button>
+</div>
+
+<?php
+    echo $this->layout("_themeTwo");
+?>
+    
+    <div class="diet-container">
+        <h1 class="h1Diet">Lista de Dietas</h1>
+
+        <div class="diet-card">
+            <h2 class="diet-title">Dieta Low Carb</h2>
+            <div class="meal-list">
+                <div class="meal-card">
+                    <h3>Refeição da Manhã</h3>
+                    <p><strong>Descrição:</strong> Omelete com espinafre</p>
+                    <p><strong>Calorias:</strong> 300 kcal</p>
+                </div>
+                <div class="meal-card">
+                    <h3>Almoço</h3>
+                    <p><strong>Descrição:</strong> Frango grelhado com salada</p>
+                    <p><strong>Calorias:</strong> 500 kcal</p>
+                </div>
+                <div class="meal-card">
+                    <h3>Jantar</h3>
+                    <p><strong>Descrição:</strong> Sopa de legumes</p>
+                    <p><strong>Calorias:</strong> 250 kcal</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="diet-card">
+            <h2 class="diet-title">Dieta Mediterrânea</h2>
+            <div class="meal-list">
+                <div class="meal-card">
+                    <h3>Café da Manhã</h3>
+                    <p><strong>Descrição:</strong> Iogurte com frutas e granola</p>
+                    <p><strong>Calorias:</strong> 350 kcal</p>
+                </div>
+                <div class="meal-card">
+                    <h3>Almoço</h3>
+                    <p><strong>Descrição:</strong> Salada de atum com legumes</p>
+                    <p><strong>Calorias:</strong> 600 kcal</p>
+                </div>
+                <div class="meal-card">
+                    <h3>Jantar</h3>
+                    <p><strong>Descrição:</strong> Peixe grelhado com quinoa</p>
+                    <p><strong>Calorias:</strong> 400 kcal</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+

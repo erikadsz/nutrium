@@ -1,0 +1,131 @@
+* {
+    font-family: 'Nanum Gothic';
+    margin: 0;
+    padding: 0;
+  }
+   #back{
+    font-family: 'Lato';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1518px;
+    margin: 0; 
+    padding: 0; 
+    }
+    #loginDiv{
+        height: 500px;
+        width: 500px;
+        background-color: rgba(255, 255, 255, 0.892);      
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        margin-left: 100px;
+        border-radius: 29px;
+        padding-top:30px;
+
+     }
+     #loginOut{
+        height: 500px;
+        width: 1060px;
+     }
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: rgba(255, 106, 0, 0.892);      
+    }
+    .content{
+        display: flex;
+        gap: 0; 
+    }
+    .content div{
+        flex: 1;
+        margin: 0;
+        padding: 0;
+    }
+label{
+        font-family: 'Lato';
+        font-weight: bold;
+        color: rgb(247, 115, 0);           
+        padding-top:40px;
+        margin-left: 20px;
+
+}
+input{
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    border-style: none;
+    width: 400px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+::placeholder{
+    font-family: 'Lato';
+}
+h3{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-shadow: 2px 3px 7px black;
+}
+#divBowl{
+    width: 1048px;
+    flex: 1;   
+}
+#imgBowl{
+    width:759px;
+    height: 725px;
+    margin: 0;
+    padding: 0;
+}
+button{
+padding: 10px;
+padding-left: 20px;
+padding-right: 20px;
+text-decoration: none;
+border: none;
+background-color: rgb(247, 115, 0);      
+border-radius: 15px;
+margin-top: 20px;
+font-family: 'Lato';
+margin-left: 200px;
+color:white;     
+font-weight: bold;
+margin-bottom: 10px;
+
+}
+button:hover{
+    transform: scale(1.1);
+}
+#loginDiv p{
+    text-align: center;
+    margin-top: 20px;
+   color: rgb(0, 0, 0);
+   font-family: 'Lato';
+   margin-bottom: 10px;
+}
+#loginDiv a{
+    text-align: center;
+    margin-top: 40px;
+    color: rgb(0, 0, 0);    
+    font-weight: bold;
+    font-family: 'Lato';
+    margin-left: 200px;
+}
+
+#loginDiv a:hover{
+  
+    color: rgb(247, 115, 0);      
+   
+}
+ #imgLogo{
+    width: 100px;
+    height: 50px;
+    margin-left: 200px;
+    margin-bottom: 30px;
+ }
+
+ 
