@@ -644,3 +644,161 @@ margin-bottom: 50px;
 .button-delete:hover {
   background-color: #c82333;
 }
+.button {
+  background-color: #09b300;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: #09b300;
+}
+.button-delete {
+  background-color: #dc3545;
+}
+.button-delete:hover {
+  background-color: #c82333;
+}
+.delete-btn {
+  background-color: rgb(117, 114, 111); /* Cor cinza */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  display: block; /* Faz o botão se comportar como um bloco */
+  margin: 0 auto; /* Centraliza o botão horizontalmente */
+  width: 200px;
+  height: 30px;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease; /* Suaviza o efeito de zoom */
+}
+
+.delete-btn:hover {
+  transform: scale(1.1); /* Aplica zoom de 10% no hover */
+}
+
+.edit-btn {
+  background-color: rgb(255, 123, 7); /* Cor laranja */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+  display: block; /* Faz o botão se comportar como um bloco */
+  margin: 0 auto; /* Centraliza o botão horizontalmente */
+  width: 200px;
+  height: 30px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Suaviza o efeito de zoom */
+}
+
+.edit-btn:hover {
+  transform: scale(1.1); /* Aplica zoom de 10% no hover */
+}
+/* Estilo para o modal */
+.clinic-modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro */
+}
+
+.clinic-modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.clinic-close-btn {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.clinic-close-btn:hover {
+  color: red;
+}
+
+.clinic-form label {
+  display: block;
+  margin-top: 10px;
+}
+
+.clinic-input {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 2%;
+}
+
+.clinic-submit-btn {
+  background-color: rgb(255, 123, 7); /* Laranja */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.clinic-submit-btn:hover {
+  background-color: rgb(255, 100, 0);
+}
+
+.clinicedith2 {
+  font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  color: #ff914d;
+  text-shadow: rgba(0, 0, 0, 0.5) 1px 0.5px 2px;
+  text-align: center;
+}
+
+
+
+.clinic-modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+  text-align: center;
+}
+
+.clinic-close-btn {
+  float: right;
+  cursor: pointer;
+}
+
+.clinic-submit-btn {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.clinic-submit-btn:hover {
+  background-color: #d32f2f;
+}
+
+#separation{
+  background-color: #807f7e;
+width: 500px;
+height: 100px;
+}

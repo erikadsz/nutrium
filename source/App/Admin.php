@@ -43,6 +43,12 @@ public function __construct()
         echo $this->view->render("userList",[]);
     }
 
+    public function createClinic ()
+    {
+        
+        echo $this->view->render("createClinic",[]);
+    }
+
 
     public function error(array $data)
     {

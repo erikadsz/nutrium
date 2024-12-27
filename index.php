@@ -41,6 +41,7 @@ $route->get("/appointmentList", "Admin:appointmentList");
 $route->get("/dietList", "Admin:dietList");
 $route->get("/clinicsList", "Admin:clinicsList");
 $route->get("/userList", "Admin:userList");
+$route->get("/createClinic", "Admin:createClinic");
 
 
 $route->get("/", "Admin:home");

@@ -25,7 +25,7 @@ class Clinics extends Api
       
     public function createClinic(array $data)
     {
-        $this->auth();
+     //   $this->auth();
 
         if(in_array("", $data)) {
             $this->back([
@@ -64,7 +64,7 @@ class Clinics extends Api
 
     public function updateClinic(array $data)
     {
-        $this->auth();
+       // $this->auth();
 
             $clinic = new Clinic(
                 $data["clinicId"],
@@ -82,7 +82,7 @@ class Clinics extends Api
    
     public function deleteClinic(array $data)
 {
-   $this->auth();
+  // $this->auth();
     var_dump($data);
     $service = new Clinic();
     $success = $service->deleteClinic($data["clinicId"]);
@@ -100,6 +100,4 @@ class Clinics extends Api
         "message" => "Clínica Excluida com sucesso!"
     ]);
 }
-
 }
-

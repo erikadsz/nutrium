@@ -33,6 +33,7 @@ $route->post("/set-password","Users:setPassword");
 $route->group("null");
 
 $route->group("/patients");
+
 $route->get("/listpatients", "Patients:listPatients");   
 $route->get("/listbyid/{patientId}", "Patients:listById");   
 $route->post("/createpatient", "Patients:createPatient");
@@ -44,6 +45,7 @@ $route->delete("/delete/{patientId}", "Patients:deletePatient");
 $route->group("null");
 
 $route->group("/clinics");
+
 $route->get("/listclinics", "Clinics:listClinics");   
 $route->get("/listclbyid/{clinicId}", "Clinics:listByIdClinic");       
 $route->post("/createclinic", "Clinics:createClinic");    
