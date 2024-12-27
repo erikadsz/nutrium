@@ -22,6 +22,8 @@
     </form>
 </div>
 
+
+
 <!-----------------------------------------------------listagem completa + editar + excluir ---------------------------------------------------------------------------------->
 
 <div class="lista-usuarios">
@@ -58,15 +60,13 @@
 </div>
 
     <!-- form para deletar clínica -->
-<form id="formDelete">
+<!-- <form id="formDelete"> -->
     <input type="number" name="clinicId" id="clinicId">
-    <input type="submit" value="Excluir clinica">
-</form>
+    <input type="submit" id="deleteButton" value="Excluir clinica">
+<!-- </form> -->
     
     <h2>Lista de Clínicas</h2>
-    <button class="create-btn"> INSERIR CLÍNICA </button>
-    <button class="edit-btn"> EDITAR </button>
-    <button class="delete-btn"> DELETAR </button>
+
 
     <table id="clinics-table">
         <thead>
@@ -102,5 +102,13 @@
 
     </table>
 
+</div>
+<div id="uploadModal" style="display: none;">
+    <form id="formImages" enctype="multipart/form-data">
+        <label for="clinicPhoto">Escolha uma foto:</label>
+        <input type="file" name="path" id="path"  required>
+        <button type="submit">Enviar Foto</button>
+        <button type="button" onclick="closeUploadModal()">Cancelar</button>
+    </form>
 </div>
 

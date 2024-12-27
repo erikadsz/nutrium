@@ -18,9 +18,9 @@
 <ul>
     <li> <img src="<?= url("themes/app/assets/img/logo2.png"); ?>" class="top"/> </li>
     <li class="liOne"> <a href="<?= url("admin"); ?>"> Início </a> </li>
-    <li class="liOne"> <a href="<?= url("admin/appointmentList"); ?>"> Lista de Compromissos </a> </li>
     <li class="liOne"> <a href="<?= url("admin/userList"); ?>"> Usuários </a> </li>
     <li class="liOne"> <a href="<?= url("admin/dietList"); ?>"> Dietas </a></li>
+    <li class="liOne"> <a href="<?= url("admin/patientsList"); ?>"> Pacientes </a> </li>
     <li class="liOne"> <a href="<?= url("admin/clinicsList"); ?>"> Clínicas </a></li>
 
 </ul>

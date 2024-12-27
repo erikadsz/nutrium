@@ -11,6 +11,9 @@
     <title> Nutrium - O serviço de gestão para sua clínica. </title>
     <script src="<?= url("themes/app/assets/scripts.js"); ?>"></script>
     <link rel="stylesheet" href="<?= url("themes/app/assets/styles.css"); ?>">
+    <?php if ($this->section("specific-script")): ?>
+    <?= $this->section("specific-script"); ?>
+<?php endif; ?>
 
 </head>
 <body>

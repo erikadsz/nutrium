@@ -25,7 +25,7 @@ class Patients extends Api
   
     public function createPatient(array $data)
     {
-        $this->auth();
+       // $this->auth();
 
         if(in_array("", $data)) {
             $this->back([
@@ -74,7 +74,7 @@ class Patients extends Api
     // Atualizar paciente
     public function updatePatient(array $data)
     {
-        $this->auth();
+        //$this->auth();
 
         $patient = new Patient(
             $data["patientId"],
@@ -100,7 +100,7 @@ class Patients extends Api
 
     public function deletePatient(array $data)
 {
-   $this->auth();
+  // $this->auth();
     
     $service = new Patient();
     $success = $service->deletePatient($data["patientId"]);

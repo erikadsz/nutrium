@@ -25,9 +25,13 @@ $route->namespace("Source\App\Api");
 $route->group("/users");
 
 $route->get("/list", "Users:listUsers"); 
+$route->get("/listuserid/{Id}", "Users:listUserById");
+$route->get("/me","Users:getUser");
 $route->post("/create","Users:createUser");
 $route->post("/login","Users:loginUser");
-$route->post("/update","Users:updateUser");
+$route->post("/update/{id}","Users:updateUser");
+$route->post("/pfp","Users:updatePhoto");
+$route->delete("/deleteuser/{Id}","Users:deleteUser");
 $route->post("/set-password","Users:setPassword");
 
 $route->group("null");
@@ -38,8 +42,16 @@ $route->get("/listpatients", "Patients:listPatients");
 $route->get("/listbyid/{patientId}", "Patients:listById");   
 $route->post("/createpatient", "Patients:createPatient");
 $route->post("/update-patient/{patientId}", "Patients:updatePatient");       
-$route->delete("/delete/{patientId}", "Patients:deletePatient");  
+$route->delete("/delete/{patientId}", "Patients:deletePatient"); 
 
+
+
+$route->group("/images");
+
+$route->get("/list","Images:listClinics");
+$route->get("/list/{id}","Images:listById");
+$route->post("/insert","Images:insertPhoto");
+$route->post("/update-product/{id}","Images:updateClinic");
 
 
 $route->group("null");

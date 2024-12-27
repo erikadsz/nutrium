@@ -16,6 +16,7 @@ class User extends Model {
     private $fk_payPlan;
     private $fk_appointmentId;
     private $fk_clinic;
+    private $pfp;
     private $message;
 
     public function __construct(
@@ -29,6 +30,7 @@ class User extends Model {
         int $fk_payPlan = null,
         int $fk_appointmentId = null,
         int $fk_clinic = null,
+        string $pfp = null,
     )
     {
         $this->id = $id;
@@ -41,6 +43,7 @@ class User extends Model {
         $this->fk_payPlan = $fk_payPlan;
         $this->fk_appointmentId = $fk_appointmentId;
         $this->fk_clinic = $fk_clinic;
+        $this->pfp = $pfp;
         $this->entity = "users";
     }
 
@@ -142,6 +145,15 @@ class User extends Model {
     {
         $this->fk_clinic = $fk_clinic;
     }
+    public function getPfp(): ?string
+    {
+        return $this->pfp;
+    }
+
+    public function setPfp(?string $pfp): void
+    {
+        $this->pfp = $pfp;
+    }
 
     public function setMessage(?string $message): void
     {
@@ -185,8 +197,8 @@ class User extends Model {
 
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO users (name, email, password, cpf, city, address, fk_payPlan, fk_appoitmentId, fk_clinic) 
-                  VALUES (:name, :email, :password, :cpf, :city, :address, :fk_payPlan, :fk_appoitmentId, :fk_clinic)";
+        $query = "INSERT INTO users (name, email, password, cpf, city, address, fk_payPlan, fk_appoitmentId, fk_clinic, pfp) 
+                  VALUES (:name, :email, :password, :cpf, :city, :address, :fk_payPlan, :fk_appoitmentId, :fk_clinic, :pfp)";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":email", $this->email);
@@ -197,6 +209,8 @@ class User extends Model {
         $stmt->bindParam(":fk_payPlan", $this->fk_payPlan);
         $stmt->bindParam(":fk_appoitmentId", $this->fk_appointmentId);
         $stmt->bindParam(":fk_clinic", $this->fk_clinic);
+        $stmt->bindParam(":pfp", $this->pfp);
+
 
         try {
             $stmt->execute();
@@ -240,6 +254,7 @@ class User extends Model {
     {
         $conn = Connect::getInstance();
 
+
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
             $this->message = "E-mail inválido!";
             return false;
@@ -264,8 +279,9 @@ class User extends Model {
         city = :city, 
         address = :address,
         fk_payPlan = :fk_payPlan,
-        fk_appointmentId = :fk_appoitmentId, 
-        fk_clinic = :fk_clinic
+        fk_appoitmentId = :fk_appoitmentId, 
+        fk_clinic = :fk_clinic,
+        pfp = :pfp
         WHERE id = :id";
 
 
@@ -279,7 +295,9 @@ class User extends Model {
         $stmt->bindParam(":fk_payPlan", $this->fk_payPlan);
         $stmt->bindParam(":fk_appoitmentId", $this->fk_appointmentId);
         $stmt->bindParam(":fk_clinic", $this->fk_clinic); 
+        $stmt->bindParam(":pfp", $this->pfp); 
         $stmt->bindParam(":id", $this->id);
+        
 
 
         try {
@@ -343,12 +361,13 @@ class User extends Model {
         users.cpf, 
         users.city, 
         users.address, 
+        users.pfp,
         payplans.payPlanName as payPlanName, 
         appointments.appointmentName as appointmentName, 
         clinics.clinicName as clinicName
         FROM users
         LEFT JOIN payplans ON users.fk_payPlan = payplans.payPlanId
-        LEFT JOIN appointments ON users.fk_appointmentId = appointments.appointmentId
+        LEFT JOIN appointments ON users.fk_appoitmentId = appointments.appointmentId
         LEFT JOIN clinics ON users.fk_clinic = clinics.clinicId
         WHERE users.id = :id";
                   
@@ -359,5 +378,55 @@ class User extends Model {
         return $stmt->fetchAll();
     }
 
+    public function deleteUser(int $id): bool
+    {
+    
+        $conn = Connect::getInstance();
+    
+        $checkQuery = "SELECT id FROM users WHERE id = :id";
+        
+        $checkStmt = $conn->prepare($checkQuery);
+        $checkStmt->bindParam(":id", $id);
+        $checkStmt->execute();
+    
+        if ($checkStmt->rowCount() === 0) {
+            $this->message = "Usuário não encontrado.";
+            return false;
+        }
+    
+        $query = "DELETE FROM users WHERE id = :id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+    
+        try {
+            $stmt->execute();
+            $this->message = "Usuário Excluido com sucesso ";
+            return true;
+        } catch (PDOException) {
+            $this->message = "Erro ao excluir o Usuário: ";
+            return false;
+        }
+    }
 
+    public function updatePhoto (): bool
+    {
+        $query = "UPDATE users 
+                  SET pfp = :pfp 
+                  WHERE id = :id";
+
+        $stmt = Connect::getInstance()->prepare($query);
+        $stmt->bindParam(":pfp", $this->pfp);
+        $stmt->bindParam(":id", $this->id);
+
+        try {
+            $stmt->execute();
+            $this->message = "Foto atualizada com sucesso!";
+            return true;
+        } catch (PDOException $exception) {
+            $this->message = "Erro ao atualizar: {$exception->getMessage()}";
+            return false;
+        }
+
+    }
+    
 }

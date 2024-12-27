@@ -75,7 +75,7 @@ class Clinics extends Api
         
 
     $result = $clinic->updateClinic();
-    var_dump($result);
+    //var_dump($result);
     }
     
 
@@ -83,7 +83,7 @@ class Clinics extends Api
     public function deleteClinic(array $data)
 {
   // $this->auth();
-    var_dump($data);
+    //var_dump($data);
     $service = new Clinic();
     $success = $service->deleteClinic($data["clinicId"]);
     
